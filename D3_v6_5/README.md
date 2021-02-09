@@ -21,7 +21,6 @@
 For the offline documentation:
 * [Offline documentation browser - Zeal](https://zealdocs.org/)
 
-* Web development
-
+Web development:
 * [Learn Web development](https://developer.mozilla.org/en-US/docs/Learn)
 * [Web Design for Everybody: Basics of Web Development & Coding](https://pt.coursera.org/specializations/web-design)
