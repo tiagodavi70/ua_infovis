@@ -25,7 +25,7 @@ svg.append("path")
   	.attr("d", path(geo_data));
 ```
 The `path` function returns a path of each country. Verify this with the `debugger` function after the path line and see what happens when the argument is a GeoJSON object (`path(geo_data.features[0]))`).  
-Modify the scale and position of the map using the `transform` scale and translate functions in the mercator object. Adjust the scale to 170 (default scale value is 150, try values ranging between 100 and 500). Center the map in the middle of SVG.  
+Modify the scale and position of the map using the scale and center functions in the mercator object. Adjust the scale to 170 (default scale value is 150, try values ranging between 100 and 500). Center the map in the middle of SVG.  
 Modify the `fill`, `stroke` and `stroke-width` by your preferences. Using the `rgb(190,100,70)` and a 1 pixel black line one can obtain the following image:
 
 ![Geo map](./geo_vis.jpg)
@@ -33,14 +33,14 @@ Modify the `fill`, `stroke` and `stroke-width` by your preferences. Using the `r
 Other projections are available to use, like the `geoEquirectangular`. More about projections [here](https://github.com/d3/d3-geo) and [here](https://d3indepth.com/geographic/).
 
 ## Pre-Processing
-For this set of examples, we will visualize for each country how many people watched the World Cup on the year that happened there. Start loading the World Cup data in the `world-cup-geo.tsv` with the following code:
+For this set of examples, we will visualize for each country how many people watched the World Cup on the year that happened there. Start loading the World Cup data in the `world_cup_geo.tsv` with the following code:
 
 ``` javascript
 function plot_circles(data) {
 
 }
 
-d3.tsv("world-cup-geo.tsv")
+d3.tsv("world_cup_geo.tsv")
 	.then(plot_circles)
 	.catch(err => { console.log(err) });
 ```
@@ -72,7 +72,7 @@ To recover the total os spectators by year/world cup it is necessary reorder and
 
 Add the following code in the `plot_circles` function to use the year as data grouping criteria.
 ``` javascript
-let grouping = d3.rollup(data, 
+let grouped = d3.rollup(data, 
     function(group) {
         
     },

@@ -57,7 +57,7 @@ function dragended(e, d) {
 Analyse the results, try drag the nodes. You can try the `miserables.json` file. Modify the visualization to your taste and tweak the force parameters.
 
 ## Tree
-Now create a tree layout to visualize DETI hierarchy (deti.json). Start crating the hierarchy using this:
+Now create a tree layout to visualize DETI hierarchy (deti.json). Start creating the hierarchy using this:
 ``` javascript
 let root = d3.hierarchy(data);
 ```
